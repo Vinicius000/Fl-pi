@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MoveEsquerda : MonoBehaviour {
 
-    public float velocidade = 1f;
+    public float velocidade;
     public float limite;
     public float retorno;
 
@@ -18,11 +16,11 @@ public class MoveEsquerda : MonoBehaviour {
 
         Vector3 velocidadeVetorial = Vector3.left * velocidade;
 
-        transform.position = transform.position + velocidadeVetorial * Time.deltaTime;
+        transform.localPosition = transform.localPosition + velocidadeVetorial * Time.deltaTime;
 
-        if (transform.position.x <= limite)
+        if (transform.localPosition.x <= limite)
         {
-            transform.position = new Vector3(retorno, transform.position.y, transform.position.z);
+            transform.localPosition = new Vector3(retorno, transform.localPosition.y, transform.localPosition.z);
         }
 
 	}
